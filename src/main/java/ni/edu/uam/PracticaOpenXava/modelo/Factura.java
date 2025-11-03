@@ -1,6 +1,7 @@
 package ni.edu.uam.PracticaOpenXava.modelo;
 
 import java.time.*;
+import java.util.Collection;
 import javax.persistence.*;
 
 import ni.edu.uam.calculadores.CalculadorSiguienteNumeroParaAnyo;
@@ -32,6 +33,9 @@ public class Factura {
 
     @ManyToOne(fetch=FetchType.LAZY, optional=false) // El cliente es obligatorio
     Cliente cliente;
+
+    @ElementCollection
+    Collection<Detalle> detalles;
 
     @Required
     @DefaultValueCalculator(CurrentLocalDateCalculator.class) // Fecha actual
