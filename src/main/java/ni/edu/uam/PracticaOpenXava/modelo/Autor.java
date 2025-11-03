@@ -5,6 +5,8 @@ import org.hibernate.annotations.GenericGenerator;
 import org.openxava.annotations.*;
 import lombok.*;
 
+import java.util.Collection;
+
 @Entity @Getter @Setter
 public class Autor {
 
