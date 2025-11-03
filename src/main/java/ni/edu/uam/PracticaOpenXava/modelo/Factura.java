@@ -11,6 +11,13 @@ import org.openxava.calculators.*;
 import lombok.*;
 
 @Entity @Getter @Setter
+
+@View(members= // Esta vista no tiene nombre, por tanto será la vista usada por defecto
+        "anyo, numero, fecha;" + // Separados por coma significa en la misma línea
+                "cliente;" + // Punto y coma significa nueva línea
+                "detalles;" +
+                "observaciones"
+)
 public class Factura {
 
     @Id
