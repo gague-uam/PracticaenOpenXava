@@ -35,6 +35,7 @@ public class Factura {
     Cliente cliente;
 
     @ElementCollection
+    @ListProperties("producto.numero, producto.descripcion, cantidad")
     Collection<Detalle> detalles;
 
     @Required
