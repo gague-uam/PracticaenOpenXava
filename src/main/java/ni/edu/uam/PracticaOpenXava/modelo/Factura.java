@@ -30,11 +30,15 @@ public class Factura {
     )
     int numero;
 
+    @ManyToOne(fetch=FetchType.LAZY, optional=false) // El cliente es obligatorio
+    Cliente cliente;
+
     @Required
     @DefaultValueCalculator(CurrentLocalDateCalculator.class) // Fecha actual
     LocalDate fecha;
 
     @TextArea
     String observaciones;
+
 
 }
